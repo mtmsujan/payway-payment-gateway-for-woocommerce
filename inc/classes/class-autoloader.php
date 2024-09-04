@@ -15,5 +15,6 @@ class Autoloader {
         // load class.
         I18n::get_instance();
         Enqueue_Assets::get_instance();
+        Create_Transaction::get_instance();
     }
 }
