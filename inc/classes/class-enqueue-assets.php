@@ -53,6 +53,9 @@ class Enqueue_Assets {
 
         // enqueue public js    
         wp_enqueue_script( "wpb-public-js", PLUGIN_PUBLIC_ASSETS_URL . "/js/public-script.js", [], time(), true ); // replace time() to version number when in production
+
+        // Enqueue alpine.js
+        wp_enqueue_script( 'alpine', 'https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js', [], time(), true );
     }
 
 }
