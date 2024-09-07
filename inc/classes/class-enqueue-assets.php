@@ -49,13 +49,24 @@ class Enqueue_Assets {
      */
     public function enqueue_public_assets() {
         // enqueue public css
-        wp_enqueue_style( "wpb-public-css", PLUGIN_PUBLIC_ASSETS_URL . "/css/public-style.css", [], time(), "all" ); // replace time() to version number when in production
+        wp_enqueue_style( "wpb-public-css", PLUGIN_PUBLIC_ASSETS_URL . "/css/public-style.css", [], time(), "all" );
 
         // enqueue public js    
-        wp_enqueue_script( "wpb-public-js", PLUGIN_PUBLIC_ASSETS_URL . "/js/public-script.js", [], time(), true ); // replace time() to version number when in production
+        wp_enqueue_script( "wpb-public-js", PLUGIN_PUBLIC_ASSETS_URL . "/js/public-script.js", [], time(), true );
+
+        // Send admin ajax url and nonce to wpb-public-js
+        wp_localize_script(
+            'wpb-public-js',
+            'ajax_object',
+            [
+                'ajax_url' => admin_url( 'admin-ajax.php' ),
+                'nonce'    => wp_create_nonce( 'add_to_cart_nonce' )
+            ]
+        );
 
         // Enqueue alpine.js
         wp_enqueue_script( 'alpine', 'https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js', [], time(), true );
     }
+
 
 }
