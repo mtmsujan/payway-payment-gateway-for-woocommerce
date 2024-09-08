@@ -23,7 +23,7 @@
           security: ajax_object.nonce, // Pass the nonce for security
         },
         success: function (response) {
-          console.log(response);
+          // console.log(response);
           let data = response.data;
           let redirect = data.redirect;
 
