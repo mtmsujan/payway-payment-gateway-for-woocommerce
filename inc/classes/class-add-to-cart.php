@@ -154,7 +154,7 @@ class Add_To_Cart {
         // Get custom form data from session
         $checkout_data = WC()->session->get( 'custom_checkout_data' );
 
-        $this->put_program_logs( 'Checkout Data: ' . json_encode( $checkout_data ) );
+        // $this->put_program_logs( 'Checkout Data: ' . json_encode( $checkout_data ) );
 
         if ( $checkout_data ) {
             // Pre-fill first name field
