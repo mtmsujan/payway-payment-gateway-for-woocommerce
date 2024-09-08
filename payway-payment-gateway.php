@@ -4,11 +4,11 @@
  * 
  * The plugin bootstrap file
  * 
- * @link              https://github.com/mtmsujan
+ * @link              https://github.com/shahjalal132
  * @since             1.0.0
  * @package           payway-payment-gateway
  * 
- * Plugin Name: PayWay Payment Gateway For WooCommerce
+ * Plugin Name: PayWay Payment Gateway integration For WooCommerce
  * Plugin URI:  #
  * Author:      Shah jalal
  * Author URI:  https://github.com/shahjalal132

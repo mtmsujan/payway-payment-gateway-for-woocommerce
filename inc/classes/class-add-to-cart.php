@@ -13,6 +13,7 @@ class Add_To_Cart {
     }
 
     public function setup_hooks() {
+        
         // Hook to handle AJAX request
         add_action( 'wp_ajax_add_to_cart', [ $this, 'handle_add_to_cart' ] );
         add_action( 'wp_ajax_nopriv_add_to_cart', [ $this, 'handle_add_to_cart' ] );
@@ -198,10 +199,10 @@ class Add_To_Cart {
         return $fields;
     }
 
+    // Function to change the checkout button text
     public function woo_custom_order_button_text() {
         return __( 'Donate', 'payway-payment-gateway' );
     }
-
 
     // Function to log form data
     public function put_program_logs( $data ) {
