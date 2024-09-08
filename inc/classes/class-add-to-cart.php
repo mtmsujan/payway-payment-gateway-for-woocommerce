@@ -22,6 +22,9 @@ class Add_To_Cart {
 
         // Hook to pre-fill checkout fields with custom form data
         add_filter( 'woocommerce_checkout_fields', [ $this, 'pre_fill_checkout_fields' ], 999 );
+
+        // Change place order button Text
+        add_filter( 'woocommerce_order_button_text', [ $this, 'woo_custom_order_button_text' ] );
     }
 
     // Function to handle the add-to-cart AJAX request
@@ -193,6 +196,10 @@ class Add_To_Cart {
         }
 
         return $fields;
+    }
+
+    public function woo_custom_order_button_text() {
+        return __( 'Donate', 'payway-payment-gateway' );
     }
 
 
