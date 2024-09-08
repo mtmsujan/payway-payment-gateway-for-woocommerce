@@ -36,5 +36,8 @@
         },
       });
     });
+
+    // Replace button text
+    $("button#place_order").text("Donate");
   });
 })(jQuery);
