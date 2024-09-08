@@ -1,7 +1,7 @@
 (function ($) {
   $(document).ready(function () {
-    $(".jalal-vai").click(function (e) {
-      e.preventDefault();
+    $("#forminator-module-2039").submit(function (e) {
+      // e.preventDefault();
 
       // retrieve form data as array
       let form = $(this).closest("form");
@@ -30,6 +30,9 @@
           if (redirect) {
             window.location.href = redirect;
           }
+        },
+        error: function (xhr, status, error) {
+          console.log(error);
         },
       });
     });
