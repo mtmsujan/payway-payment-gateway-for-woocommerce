@@ -1,6 +1,6 @@
 (function ($) {
   $(document).ready(function () {
-    $("#forminator-module-2039").submit(function (e) {
+    $("#forminator-module-2109").submit(function (e) {
       // e.preventDefault();
 
       // retrieve form data as array
@@ -36,6 +36,6 @@
         },
       });
     });
-    
+
   });
 })(jQuery);

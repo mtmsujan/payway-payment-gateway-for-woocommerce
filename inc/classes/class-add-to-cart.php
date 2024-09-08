@@ -204,7 +204,7 @@ class Add_To_Cart {
 
     // Function to pre-fill billing country field with custom form data stored in session
     public function pre_fill_billing_country( $fields ) {
-        
+
         // Get custom form data from session
         $checkout_data = WC()->session->get( 'custom_checkout_data' );
 
