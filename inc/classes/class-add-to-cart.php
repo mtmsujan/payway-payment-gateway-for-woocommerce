@@ -13,7 +13,7 @@ class Add_To_Cart {
     }
 
     public function setup_hooks() {
-        
+
         // Hook to handle AJAX request
         add_action( 'wp_ajax_add_to_cart', [ $this, 'handle_add_to_cart' ] );
         add_action( 'wp_ajax_nopriv_add_to_cart', [ $this, 'handle_add_to_cart' ] );
@@ -23,6 +23,9 @@ class Add_To_Cart {
 
         // Hook to pre-fill checkout fields with custom form data
         add_filter( 'woocommerce_checkout_fields', [ $this, 'pre_fill_checkout_fields' ], 999 );
+
+        // Change billing country
+        add_filter( 'woocommerce_billing_fields', [ $this, 'pre_fill_billing_country' ], 999, 1 );
 
         // Change place order button Text
         add_filter( 'woocommerce_order_button_text', [ $this, 'woo_custom_order_button_text' ] );
@@ -194,6 +197,19 @@ class Add_To_Cart {
 
             $fields['billing']['billing_description_of_what_you_are_paying_for_']['default']      = $checkout_data['message'];
             $fields['billing']['billing_description_of_what_you_are_paying_for_']['autocomplete'] = 'no';
+        }
+
+        return $fields;
+    }
+
+    // Function to pre-fill billing country field with custom form data stored in session
+    public function pre_fill_billing_country( $fields ) {
+        
+        // Get custom form data from session
+        $checkout_data = WC()->session->get( 'custom_checkout_data' );
+
+        if ( $checkout_data && !empty( $checkout_data['country'] ) ) {
+            $fields['billing_country']['default'] = $checkout_data['country'];
         }
 
         return $fields;

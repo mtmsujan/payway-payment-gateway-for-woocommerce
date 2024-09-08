@@ -8,7 +8,7 @@
  * @since             1.0.0
  * @package           payway-payment-gateway
  * 
- * Plugin Name: PayWay Payment Gateway integration For WooCommerce
+ * Plugin Name: ABA PayWay Payment Gateway integration For WooCommerce
  * Plugin URI:  #
  * Author:      Shah jalal
  * Author URI:  https://github.com/shahjalal132
