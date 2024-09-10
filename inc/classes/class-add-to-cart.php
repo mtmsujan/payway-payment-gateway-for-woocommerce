@@ -112,12 +112,14 @@ class Add_To_Cart {
 
             // Get checkout page URL and respond with success
             $checkout_page_url = wc_get_checkout_url();
+            // get cart page url
+            $cart_page_url = wc_get_cart_url();
 
             // Send success response
             wp_send_json_success(
                 array(
                     'message'  => 'Product added to cart',
-                    'redirect' => $checkout_page_url,
+                    'redirect' => $cart_page_url,
                 )
             );
 
